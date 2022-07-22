@@ -49,7 +49,7 @@ EOH
 
 			resources {
 				cpu = 500
-				memory = ${esignsantepsc_dbserver_mem_size}
+				memory = ${esignsantefsepsc_dbserver_mem_size}
 			}
 			service {
 				name = "esignsante-fse-psc-mongodb-server"
