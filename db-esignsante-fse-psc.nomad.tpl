@@ -1,4 +1,4 @@
-job "db-esignsante_psc" {
+job "db-esignsante_fse_psc" {
 	datacenters = ["${datacenter}"]
 	type = "service"
 	update {
