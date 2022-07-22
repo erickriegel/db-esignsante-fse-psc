@@ -27,8 +27,8 @@ app "cybersante/db-esignsante-fse-psc" {
 		use "nomad-jobspec" {
 			jobspec = templatefile("${path.app}/db-esignsante-fse-psc.nomad.tpl", {
 				datacenter = var.datacenter
-				esignsantepsc_mongodb_size = var.esignsantepsc_mongodb_size
-				esignsantepsc_dbserver_mem_size = var.esignsantepsc_dbserver_mem_size
+				esignsantefsepsc_mongodb_size = var.esignsantefsepsc_mongodb_size
+				esignsantefsepsc_dbserver_mem_size = var.esignsantefsepsc_dbserver_mem_size
 			})
 		}
 	}
@@ -39,12 +39,12 @@ variable datacenter {
     default = "test"
 }
 
-variable "esignsantepsc_mongodb_size" {
+variable "esignsantefsepsc_mongodb_size" {
   type = string
   default = "3"
 }
 
-variable "esignsantepsc_dbserver_mem_size" {
+variable "esignsantefsepsc_dbserver_mem_size" {
   type = string
   default = "2048"
 }
