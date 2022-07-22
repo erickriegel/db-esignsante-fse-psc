@@ -1,12 +1,12 @@
-project = "cybersante/db-esignsante-psc"
+project = "cybersante/db-esignsante-fse-psc"
 
-labels = { "domaine" = "esignsante-psc" }
+labels = { "domaine" = "esignsante-fse-psc" }
 
 runner {
     enabled = true
     data_source "git" {
-        url = "https://github.com/ansforge/db-esignsante-psc"
-        ref = "var.datacenter"
+        url = "https://github.com/erickriegel/db-esignsante-fse-psc"
+        ref = "main"
     }
     poll {
         enabled = true
@@ -15,7 +15,7 @@ runner {
 }
 
 # An application to deploy.
-app "cybersante/db-esignsante-psc" {
+app "cybersante/db-esignsante-fse-psc" {
     build {
         use "docker-pull" {
            image = "mongo"
@@ -25,7 +25,7 @@ app "cybersante/db-esignsante-psc" {
 
 	deploy {
 		use "nomad-jobspec" {
-			jobspec = templatefile("${path.app}/db-esignsante-psc.nomad.tpl", {
+			jobspec = templatefile("${path.app}/db-esignsante-fse-psc.nomad.tpl", {
 				datacenter = var.datacenter
 				esignsantepsc_mongodb_size = var.esignsantepsc_mongodb_size
 				esignsantepsc_dbserver_mem_size = var.esignsantepsc_dbserver_mem_size
