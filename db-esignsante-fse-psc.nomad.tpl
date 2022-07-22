@@ -33,8 +33,8 @@ job "db-esignsante_psc" {
 				image = "mongo"
 				ports  = [ "db" ]
 				volumes = [
-					"name=esignsante_psc-mongodb, fs=xfs, io_priority=high, size=${esignsantepsc_mongodb_size}, repl=2:/data/db",
-					"name=esignsante_psc-mongodb-config, fs=xfs, io_priority=high, size=1, repl=2:/data/configdb"
+					"name=esignsante_fse_psc-mongodb, fs=xfs, io_priority=high, size=${esignsantefsepsc_mongodb_size}, repl=2:/data/db",
+					"name=esignsante_fse_psc-mongodb-config, fs=xfs, io_priority=high, size=1, repl=2:/data/configdb"
 				]
 				volume_driver = "pxd"
 			}
@@ -52,7 +52,7 @@ EOH
 				memory = ${esignsantepsc_dbserver_mem_size}
 			}
 			service {
-				name = "esignsante-psc-mongodb-server"
+				name = "esignsante-fse-psc-mongodb-server"
 				port = "db"
 				check {
 					type = "tcp"
