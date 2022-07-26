@@ -6,7 +6,7 @@ job "db-esignsante_fse_psc" {
 			max_parallel = 1
 	}
 	vault {
-		policies = ["esignsante_psc"]
+		policies = ["esignsante-fse-psc"]
 		change_mode = "restart"
 	}
 
